@@ -3,6 +3,7 @@ from os import system
 import math 
 from scipy.stats import pearsonr
 import numpy as np
+import matplotlib.pyplot as plt
 
 system("title Pearson Product Moment Correlation ^| Laurence Lesmoras")
 
@@ -59,7 +60,6 @@ def calculate(number, x_list, y_list):
     data = columnar(data=new_list, headers=["Child", "X", "Y", "XY", "x^2", "y^2"], no_borders=True) # Creating Table
     print(data)
 
-
     sum_x = sum(x_list)
     sum_y = sum(y_list)
     sum_xy = sum(xy)
@@ -70,6 +70,7 @@ def calculate(number, x_list, y_list):
     y_array = np.array(y_list)
     solve = pearsonr(x_list, y_list)[0]
 
+
     print(f"\nSummation of X: {sum_x}")
     print(f"Summation of Y: {sum_y}")
     print(f"Summation of XY: {sum_xy}")
@@ -78,6 +79,12 @@ def calculate(number, x_list, y_list):
     print(f"\nPearson Product Final Answer: {solve}")
     print(f"Pearson Product Rounded Answer: {round(solve, 4)}")
     print("\n\n")
+    print("CLOSE PLOT WINDOW TO PROCEED")
+    plt.figure(figsize=(8,6))
+    plt.scatter(x_list,y_list)
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.show()
     answer = input("Calculate again? [Y/N]: ")
     if answer.lower() == "y":
         system('cls')
