@@ -10,7 +10,7 @@ system("title Pearson Product Moment Correlation ^| Laurence Lesmoras")
 def header():
     print("===================================================================")
     print("Pearson Product Moment Correlation Coefficient Calculator")
-    print("Created by exdarku\n\nhttps://laur-portfolio.rf.gd")
+    print("Created by exdarku\n\nhttps://laurencelesmoras.dev")
     print("===================================================================")
     
 
